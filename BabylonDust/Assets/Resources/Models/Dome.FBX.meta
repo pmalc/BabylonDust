@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: e8165697ed190284d83852da1630cec1
+timeCreated: 1458955437
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base
+    100002: Columna 1
+    100004: Columna 2
+    100006: Columna 3
+    100008: Columna 4
+    100010: Columna 5
+    100012: Columna 6
+    100014: Columna 7
+    100016: Columna 8
+    100018: //RootNode
+    100020: Cupula
+    100022: Insignia 1
+    100024: Insignia 2
+    100026: Insignia 3
+    100028: Insignia 4
+    100030: Insignia 5
+    100032: Insignia 6
+    100034: Pedestal 1
+    100036: Pedestal 2
+    100038: Pedestal 3
+    100040: Pedestal 4
+    100042: Pedestal 5
+    100044: Pedestal 6
+    100046: Top
+    400000: Base
+    400002: Columna 1
+    400004: Columna 2
+    400006: Columna 3
+    400008: Columna 4
+    400010: Columna 5
+    400012: Columna 6
+    400014: Columna 7
+    400016: Columna 8
+    400018: //RootNode
+    400020: Cupula
+    400022: Insignia 1
+    400024: Insignia 2
+    400026: Insignia 3
+    400028: Insignia 4
+    400030: Insignia 5
+    400032: Insignia 6
+    400034: Pedestal 1
+    400036: Pedestal 2
+    400038: Pedestal 3
+    400040: Pedestal 4
+    400042: Pedestal 5
+    400044: Pedestal 6
+    400046: Top
+    2300000: Base
+    2300002: Columna 1
+    2300004: Columna 2
+    2300006: Columna 3
+    2300008: Columna 4
+    2300010: Columna 5
+    2300012: Columna 6
+    2300014: Columna 7
+    2300016: Columna 8
+    2300018: Cupula
+    2300020: Insignia 1
+    2300022: Insignia 2
+    2300024: Insignia 3
+    2300026: Insignia 4
+    2300028: Insignia 5
+    2300030: Insignia 6
+    2300032: Pedestal 1
+    2300034: Pedestal 2
+    2300036: Pedestal 3
+    2300038: Pedestal 4
+    2300040: Pedestal 5
+    2300042: Pedestal 6
+    2300044: Top
+    3300000: Base
+    3300002: Columna 1
+    3300004: Columna 2
+    3300006: Columna 3
+    3300008: Columna 4
+    3300010: Columna 5
+    3300012: Columna 6
+    3300014: Columna 7
+    3300016: Columna 8
+    3300018: Cupula
+    3300020: Insignia 1
+    3300022: Insignia 2
+    3300024: Insignia 3
+    3300026: Insignia 4
+    3300028: Insignia 5
+    3300030: Insignia 6
+    3300032: Pedestal 1
+    3300034: Pedestal 2
+    3300036: Pedestal 3
+    3300038: Pedestal 4
+    3300040: Pedestal 5
+    3300042: Pedestal 6
+    3300044: Top
+    4300000: Base
+    4300002: Columna 4
+    4300004: Columna 1
+    4300006: Columna 8
+    4300008: Columna 2
+    4300010: Columna 7
+    4300012: Columna 3
+    4300014: Columna 6
+    4300016: Columna 5
+    4300018: Cupula
+    4300020: Top
+    4300022: Pedestal 2
+    4300024: Insignia 2
+    4300026: Pedestal 3
+    4300028: Insignia 3
+    4300030: Pedestal 1
+    4300032: Insignia 1
+    4300034: Pedestal 6
+    4300036: Insignia 6
+    4300038: Pedestal 5
+    4300040: Insignia 5
+    4300042: Pedestal 4
+    4300044: Insignia 4
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

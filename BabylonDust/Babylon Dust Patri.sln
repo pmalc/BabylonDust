@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{24F2C648-99AA-C3F0-05C8-CC841F2F49B9}") = "Babylon Dust Patri", "Assembly-CSharp.csproj", "{1FDA0B1E-2E9D-D7B1-6ECE-605337470299}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FDA0B1E-2E9D-D7B1-6ECE-605337470299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FDA0B1E-2E9D-D7B1-6ECE-605337470299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FDA0B1E-2E9D-D7B1-6ECE-605337470299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FDA0B1E-2E9D-D7B1-6ECE-605337470299}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
