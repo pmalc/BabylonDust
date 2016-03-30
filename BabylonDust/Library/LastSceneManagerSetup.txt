@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/CircularSala.unity
+- path: Assets/Scenes/CamaraInterior1.unity
   isLoaded: 1
   isActive: 1

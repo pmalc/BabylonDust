@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e9075e41fe7805d4cb3b4365f681b5da
-timeCreated: 1458963960
+guid: 677b5d7a8566ff346afe0296fbfa3845
+timeCreated: 1459316930
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Maria_Pared_Exterior
+    4300000: Maria_ParedExteriorCompuesta_Quads
     9500000: //RootNode
   materials:
     importMaterials: 1
