@@ -14,10 +14,9 @@ public class LeolineControl : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
 	}
-	void OnCollisionEnter(Collision collision){
-		string tag = collision.collider.tag;
+	void OnTriggerEnter(Collider collision){
+		string tag = collision.tag;
 		if (tag == "Arm") {
 			collision.gameObject.GetComponent<BoxCollider> ().enabled = false;
 			characterController.GetComponent<characterController> ().character2Hp -= armAttack;
@@ -25,14 +24,15 @@ public class LeolineControl : MonoBehaviour {
 		}
 		if (tag == "Orb") {
 			characterController.GetComponent<characterController> ().points += orbPoints;
+			Destroy (collision.gameObject);
 		}
 		if(tag == "Arrow"){
 			characterController.GetComponent<characterController> ().character2Hp -= arrowAttack;
 			GetComponent<Rigidbody> ().AddForce (Vector3.up * 2.0f, ForceMode.Impulse);
 		}
 	}
-	void OnCollisionStay(Collision collision){
-		string tag = collision.collider.tag;
+	void OnTriggerStay(Collider collision){
+		string tag = collision.tag;
 		if (tag == "Wall") {
 			if (Input.GetKey (KeyCode.E)) {
 				GetComponent<LeolineMovement> ().climb = true;
@@ -41,8 +41,8 @@ public class LeolineControl : MonoBehaviour {
 			}
 		}
 	}
-	void OnCollisionExit(Collision collision){
-		string tag = collision.collider.tag;
+	void OnTriggerExit(Collider collision){
+		string tag = collision.tag;
 		if (tag == "Wall") {
 				GetComponent<LeolineMovement> ().climb = false;
 				GetComponent<Rigidbody> ().useGravity = true;

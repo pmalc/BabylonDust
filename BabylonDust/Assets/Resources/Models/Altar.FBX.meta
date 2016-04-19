@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 55872ef840526a84abf0184c958a1fc3
-timeCreated: 1459159622
+guid: bd5bb558a2ae56c429dae131f0e6e372
+timeCreated: 1459904235
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Patricia_Altar
+    4300000: Patricia_Altar_UVW
     9500000: //RootNode
   materials:
     importMaterials: 1

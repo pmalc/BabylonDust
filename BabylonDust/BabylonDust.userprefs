@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Characters Scripts\LeolineAI.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Characters Scripts\LeolineAI.cs" Line="68" Column="111" />
+      <File FileName="Assets\Scripts\Characters Scripts\LinxAI.cs" Line="73" Column="111" />
+      <File FileName="Assets\Scripts\Characters Scripts\RustyAI.cs" Line="69" Column="113" />
+      <File FileName="Assets\Scripts\Camera Scripts\cameraControl.cs" Line="139" Column="63" />
+      <File FileName="Assets\Scripts\Characters Scripts\LeolineMovement.cs" Line="10" Column="19" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -91,6 +91,10 @@ public class controlsController : MonoBehaviour
             orig_pcItem4 = pcItem4;
             orig_pcInv = pcInv;
             orig_pcPause = pcPause;*/
+			PC_Move_Forward2 = KeyCode.UpArrow;
+			PC_Rotate_Right2 = KeyCode.RightArrow;
+			PC_Rotate_Left2 = KeyCode.LeftArrow;
+
 		}
 		else
 		{
@@ -150,9 +154,9 @@ public class controlsController : MonoBehaviour
 		case "2":
 			if (multiplay.GetComponent<characterState> ().multiplayer) {
 				if (!isControllerConnected) {
-					PC_Move_Forward1 = KeyCode.W;
-					PC_Rotate_Right1 = KeyCode.D;
-					PC_Rotate_Left1 = KeyCode.A;
+					PC_Move_Forward2 = KeyCode.UpArrow;
+					PC_Rotate_Right2 = KeyCode.RightArrow;
+					PC_Rotate_Left2 = KeyCode.LeftArrow;
 					PC_Jump1 = KeyCode.Space;
 					PC_Sprint1 = KeyCode.LeftShift;
 					PC_Action1 = KeyCode.E;

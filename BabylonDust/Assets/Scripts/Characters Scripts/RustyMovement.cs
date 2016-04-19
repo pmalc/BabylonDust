@@ -11,39 +11,54 @@ public class RustyMovement : MonoBehaviour {
 	public GameObject controlOject;
 	public GameObject controls;
 	public bool push = false;
-	// Use this for initialization
-	void Start () {
-
-	}
+	public float jumpForce = 2.0f;
+	public int active;
+	private bool busy = false;
+	public GameObject hitPoint;
+    private Rigidbody rigi;
+    // Use this for initialization
+    void Start()
+    {
+        rigi = GetComponent<Rigidbody>();
+    }
 
 	// Update is called once per frame
 	void Update () {
 		//Vemos si esta activo el personaje
 		//Si es 0 no estará activo, si es 1 lo controla el jugador 1 y si es 2 lo controla el jugador 2
-		int active = controlOject.GetComponent<characterState> ().player3Active;
+		active = controlOject.GetComponent<characterState> ().player3Active;
 
-		//antes de cambair el movimiento lo iniciamos a falso
-		GetComponent<Animator> ().SetBool ("Movement", false); 
 
 		switch (active) {
 		//Si está descativado
 		case 0:
-			GetComponent<Animator> ().SetBool ("Movement", false);
-			GetComponent<NavMeshAgent> ().enabled = true;
+                rigi.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+                GetComponent<NavMeshAgent> ().enabled = true;
 			break;
 			//Si lo controla el jugador 1
 		case 1:
+                rigi.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+
+                //antes de cambair el movimiento lo iniciamos a falso
+                GetComponent<Animator> ().SetBool ("Movement", false); 
 			if (Input.anyKey) {
 				GetComponent<NavMeshAgent> ().enabled = false;
 				movement(active);
 			}
 			break;
 		case 2:
+                rigi.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+
+                //antes de cambair el movimiento lo iniciamos a falso
+                GetComponent<Animator> ().SetBool ("Movement", false); 
 			if (Input.anyKey) {
 				GetComponent<NavMeshAgent> ().enabled = false;
 				movement(active);
 			}
 			break;
+		}
+		if (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("Idle")) {
+			busy = false;
 		}
 
 	}
@@ -58,9 +73,14 @@ public class RustyMovement : MonoBehaviour {
 
 			//Controles del jugador 1
 			case 1:
-				if (Input.GetKey (controls.GetComponent<controlsController> ().PC_Move_Forward1)) {
+				if (Input.GetKeyDown (controls.GetComponent<controlsController> ().PC_AttackUse1) && !busy){
+					GetComponent<Animator> ().SetTrigger("Attack");
+					hitPoint.GetComponent<BoxCollider> ().enabled = true;
+					busy = true;
+				}
+				else if (Input.GetKey (controls.GetComponent<controlsController> ().PC_Move_Forward1) && !busy) {
 					GetComponent<Animator> ().SetBool ("Movement", true);
-					transform.Translate (Vector3.forward * vel);
+					transform.Translate (Vector3.forward.normalized * vel);
 				}
 				if (Input.GetKey (controls.GetComponent<controlsController> ().PC_Sprint1) && GetComponent<Animator> ().GetBool ("Movement")) {
 					GetComponent<Animator> ().SetFloat ("Walk/Run", 100f);
@@ -69,14 +89,15 @@ public class RustyMovement : MonoBehaviour {
 					GetComponent<Animator> ().SetFloat ("Walk/Run", 0.0f);
 					vel = velWalk;
 				}
-				if (Input.GetKey (controls.GetComponent<controlsController> ().PC_Rotate_Left1)) {
+				if (Input.GetKey (controls.GetComponent<controlsController> ().PC_Rotate_Left1)&& !busy) {
 					transform.Rotate (Vector3.up * velRotation * -1);
 				}
-				if (Input.GetKey (controls.GetComponent<controlsController> ().PC_Rotate_Right1)) {
+				if (Input.GetKey (controls.GetComponent<controlsController> ().PC_Rotate_Right1)&& !busy) {
 					transform.Rotate (Vector3.up * velRotation);
 				}
 				if (Input.GetKeyDown (controls.GetComponent<controlsController> ().PC_Jump1)) {
 					GetComponent<Animator> ().SetTrigger ("Jump");
+					GetComponent<Rigidbody> ().AddForce ((transform.forward + transform.up)*jumpForce, ForceMode.Impulse);
 				}
 				break;
 
@@ -103,6 +124,7 @@ public class RustyMovement : MonoBehaviour {
 				}
 				if (Input.GetKeyDown (controls.GetComponent<controlsController> ().PC_Jump2)) {
 					GetComponent<Animator> ().SetTrigger ("Jump");
+					GetComponent<Rigidbody> ().AddForce ((transform.forward + transform.up)*jumpForce, ForceMode.Impulse);
 				}
 				break;
 

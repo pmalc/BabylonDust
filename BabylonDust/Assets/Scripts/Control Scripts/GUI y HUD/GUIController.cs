@@ -4,41 +4,54 @@ using UnityEngine.SceneManagement;
 
 public class GUIController : MonoBehaviour {
 
-	//Main Menu
-	void newGame(){
-		SceneManager.LoadScene ("");
-	}
+    //Main Menu
+    public void newGame()
+    {
+        SceneManager.LoadScene(3);
+    }
 
-	void loadGame(){
-		SceneManager.LoadScene ("");
-	}
+    public void loadGame()
+    {
+        SceneManager.LoadScene("");
+    }
 
-	void options(){
-		SceneManager.LoadScene ("");
-	}
+    public void options()
+    {
+        SceneManager.LoadScene(4);
+    }
 
-	void credits(){
-		SceneManager.LoadScene ("");
-	}
+    public void credits()
+    {
+        SceneManager.LoadScene("");
+    }
 
-	void exitGame(){
-		SceneManager.LoadScene ("");
-	}
+    public void exitGame()
+    {
+        Application.Quit();
+    }
 
-	//Options Menu
-	void controls(){
-		SceneManager.LoadScene ("");
-	}
+    //Options Menu
+    public void controls()
+    {
+        SceneManager.LoadScene(5);
+    }
 
-	void screen(){
-		SceneManager.LoadScene ("");
-	}
+    public void screen()
+    {
+        SceneManager.LoadScene("");
+    }
 
-	void sound(){
-		SceneManager.LoadScene ("");
-	}
+    public void sound()
+    {
+        SceneManager.LoadScene("");
+    }
 
-	void exitOptions(){
-		SceneManager.LoadScene ("");
-	}
+    public void exitOptions()
+    {
+        SceneManager.LoadScene(2);
+    }
+    public void exitControls()
+    {
+        SceneManager.LoadScene(4);
+    }
 }

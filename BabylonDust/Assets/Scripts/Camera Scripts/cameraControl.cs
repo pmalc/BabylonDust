@@ -6,7 +6,8 @@ public class cameraControl : MonoBehaviour
 	public float ScreenEdgeBuffer = 4f;           // Espacio entre el filo de la camara y el personaje
 	public float MinSize =2.0f;                  // Tamaño mínimo de la camara
 	public Transform[] Targets; 					// Todos los objetivos que la gamara tiene que captar
-
+	public bool rotation = true;						//Para que la camara rote con los personajes
+	public float rotateVel=1;
 
 	private Camera Camera;                        // Referencia a la camara
 	private float ZoomSpeed;                      // Velocidad del zoom.
@@ -21,12 +22,17 @@ public class cameraControl : MonoBehaviour
 
 
 	private void FixedUpdate ()
-	{
+	{	
+		if (rotation) {
+			//Rotamos la camara si es necesario
+			Rotate ();
+		}
 		// movemos la camara a laposicion media
 		Move ();
 
 		// Cambia el tamaño de la camara base
 		Zoom ();
+
 	}
 
 
@@ -113,5 +119,28 @@ public class cameraControl : MonoBehaviour
 		return size;
 	}
 
+	void Rotate(){
+		Vector3 averageDir = new Vector3 ();
+		int numTargets = 0;
+
+		// Rrecorre la direccion de lso personajes y las va sumando
+		for (int i = 0; i < Targets.Length; i++)
+		{
+			// Si el objetivo no está activo va a al siguiente
+			if (!Targets[i].gameObject.activeSelf)
+				continue;
+
+			// Añade la posicion al total y aumenta el numero de objetivos en uno.
+				averageDir += Targets [i].transform.forward;
+				numTargets++;
+
+		}
+		averageDir = averageDir / numTargets;
+		transform.forward = Vector3.SmoothDamp(transform.forward, averageDir, ref MoveVelocity, DampTime);
+	} 
+
+	public void rotate(){
+		rotation = !rotation;
+	}
 
 }

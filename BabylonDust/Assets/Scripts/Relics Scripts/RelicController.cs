@@ -68,35 +68,30 @@ public class RelicController : MonoBehaviour {
 	void Update () {
 		if(Input.GetKey(KeyCode.Keypad1)){
 			relicNeck = 1;
-			appearRelics ();
 		}else if(Input.GetKey(KeyCode.Keypad2)){
 			relicBrazalet = 1;
-			appearRelics ();
 		}else if(Input.GetKey(KeyCode.Keypad3)){
 			relicRing = 1;
-			appearRelics ();
 		}else if(Input.GetKey(KeyCode.Keypad4)){
 			relicEar = 1;
-			appearRelics ();
 		}else if(Input.GetKey(KeyCode.Keypad5)){
 			relicPin = 1;
-			appearRelics ();
 		}else if(Input.GetKey(KeyCode.Keypad6)){
 			relicCrown = 1;
-			appearRelics ();
 		}
+		appearRelics ();
 	}
 
 	void appearRelics(){
 
-		//Leoline
+		//linx
 		switch(relicNeck){
 		case 0:
-			CoolDownLeoline.enabled = false;
+			CoolDownLinx.enabled = false;
 			Relic1Selected.enabled = false;
 			break;
 		case 1:
-			CoolDownLeoline.enabled = true;
+			CoolDownLinx.enabled = true;
 			Relic1Selected.enabled = true;
 			break;
 		case 2:
@@ -117,11 +112,11 @@ public class RelicController : MonoBehaviour {
 		//Linx
 		switch(relicRing){
 		case 0:
-			CoolDownLinx.enabled = false;
+			CoolDownLeoline.enabled = false;
 			Relic3Selected.enabled = false;
 			break;
 		case 1:
-			CoolDownLinx.enabled = true;
+			CoolDownLeoline.enabled = true;
 			Relic3Selected.enabled = true;
 			break;
 		case 2:

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy1AI : MonoBehaviour {
+public class MushussuAI : MonoBehaviour {
 	public Transform[] Targets; // los tres personajes objetivos
 	public GameObject[] Enemys;  //enemigos que van a ser activados cuando este se active
 	public float activateRange; // rango de activación del enemigo
@@ -16,6 +16,7 @@ public class Enemy1AI : MonoBehaviour {
 	NavMeshAgent agent; // el agente de la navegación
 	Animator anim;
 	public int hp = 100;//Vida del enemigo
+	public int playerArmAttack = 50;
 	public GameObject orbPrefab;
 	private bool dead = false;
 
@@ -34,13 +35,14 @@ public class Enemy1AI : MonoBehaviour {
 				anim.SetTrigger ("Dead");
 				dead = true;
 				Instantiate (orbPrefab, transform.position,transform.rotation);
+				Object.Destroy (gameObject);
 			}
 		} else {
 			FindTarget ();
 			//Buscamos el objetivo mas cercano y en caso de que este por debajo del rango de activación inRange se pone a true
 			if (inRange) {
 				for (int i = 0; i < Enemys.Length; i++) {
-					Enemys [i].GetComponent<Enemy1AI> ().inRange = true;
+					Enemys [i].GetComponent<MushussuAI> ().inRange = true;
 				}
 				//En el caso de que el enemigo esté en rango hacemos las acciones pertinentes atacar o movernos hacia el
 				if (range <= attackRange) {
@@ -89,5 +91,13 @@ public class Enemy1AI : MonoBehaviour {
 		Quaternion rotation = Quaternion.LookRotation (new Vector3(Targets [target].position.x,0.0f,Targets [target].position.z) - new Vector3(transform.position.x,0.0f,transform.position.z));
 		//Hacemos que ire con la velocidad que hemos indicado
 		transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotationVel);
+	}
+	void OnTriggerEnter(Collider collision){
+		string tag = collision.tag;
+		if (tag == "PlayerArm") {
+			collision.gameObject.GetComponent<BoxCollider> ().enabled = false;
+			hp -= playerArmAttack;
+
+		}
 	}
 }

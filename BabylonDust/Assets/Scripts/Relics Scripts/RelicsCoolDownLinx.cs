@@ -1,46 +1,87 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class RelicsCoolDownLinx : MonoBehaviour {
 	
 	//Este script se encarga de controlar el cooldown de las reliquias de cada personaje y a su vez el cambio de reliquias (HUD)
-	/*
+	//Crear dos variables y de los coolDownTime y coolDownAmount, hacer un if en la función activateRelic()
+
 	//Reliquias Imagenes
-	public Image Relic3Selected;
-	public Image Relic4Selected;
+	public Image Relic1Selected;
+	public Image Relic2Selected;
 
 	private Image relicCDFilling;//Imagen del Hud CoolDownLeoline
-	private bool reduceCD;
-	private float coolDownTime;
+	private bool reduceCD1;
+	private bool reduceCD2;
 
-	public float coolDownAmount;//Tiempos de los coolDown
+	private float coolDownTime1;
+	public float coolDownAmount1;//Timepo de coolDown de la primera reliquia
+
+	private float coolDownTime2;
+	public float coolDownAmount2;//Timepo de coolDown de la segunda reliquia
+
+	public GameObject stateObject;
+	public GameObject characterController;
+	public GameObject Linx;
 
 	void Start(){
-		coolDownTime = coolDownAmount;
+		coolDownTime1 = coolDownAmount1;
+		coolDownTime2 = coolDownAmount2;
 		relicCDFilling = this.GetComponent<Image>();	
-		Relic1Selected = GameObject.Find ("Relic3").GetComponent<Image> ();
-		Relic2Selected = GameObject.Find ("Relic4").GetComponent<Image> ();
+		Relic1Selected = GameObject.Find ("Relic1").GetComponent<Image> ();
+		Relic2Selected = GameObject.Find ("Relic2").GetComponent<Image> ();
 	}
 
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.R)){
 			changeRelicImages ();
 		}
-		if(Input.GetKeyDown(KeyCode.Q) || reduceCD){
-			reduceCD = true;
-			activateRelic ();
+
+		if(Input.GetKeyDown(KeyCode.Q) && stateObject.GetComponent<characterState>().characterActive1 == 0 && coolDownTime1 == coolDownAmount1 ){
+			if(Relic1Selected.sprite == Resources.Load<Sprite> ("Sprites/Reliquia1Selected")){
+				reduceCD1 = true;
+				Linx.GetComponent<Animator> ().SetTrigger ("Heal");
+				characterController.GetComponent<characterController>().character1Hp += 100;
+				characterController.GetComponent<characterController>().character2Hp += 100;
+				characterController.GetComponent<characterController>().character3Hp += 100;
+			}
+			if(Relic2Selected.sprite == Resources.Load<Sprite>("Sprites/Reliquia2Selected")){
+				reduceCD2 = true;
+			}
 		}	
+		activateRelic ();
 	}
 
 	//Activa el cooldown
 	void activateRelic(){
-		if(coolDownTime >= 0){
-			coolDownTime -= Time.deltaTime;
-			if(coolDownTime <= 0){
-				reduceCD = false;
-				coolDownTime = coolDownAmount;
+		if(coolDownTime1 >= 0 && reduceCD1){
+			coolDownTime1 -= Time.deltaTime;
+			if(coolDownTime1 <= 0){
+				reduceCD1 = false;
+				coolDownTime1 = coolDownAmount1;
 			}
-			relicCDFilling.fillAmount = coolDownTime / coolDownAmount;
+			//relicCDFilling.fillAmount = coolDownTime1 / coolDownAmount1;
+			showCoolDown ();
+		}
+
+		if(coolDownTime2 >= 0 && reduceCD2){
+			coolDownTime2 -= Time.deltaTime;
+			if(coolDownTime2 <= 0){
+				reduceCD2 = false;
+				coolDownTime2 = coolDownAmount2;
+			}
+			//relicCDFilling.fillAmount = coolDownTime2 / coolDownAmount2;
+			showCoolDown ();
+		}
+	}
+
+	void showCoolDown(){
+		if(Relic1Selected.sprite == Resources.Load<Sprite> ("Sprites/Reliquia1Selected")){
+			relicCDFilling.fillAmount = coolDownTime1 / coolDownAmount1;
+		}
+		if(Relic2Selected.sprite == Resources.Load<Sprite>("Sprites/Reliquia2Selected")){
+			relicCDFilling.fillAmount = coolDownTime2 / coolDownAmount2;
 		}
 	}
 
@@ -48,18 +89,18 @@ public class RelicsCoolDownLinx : MonoBehaviour {
 	void changeRelicImages(){
 		//Single Player
 
-		//if(Player1 == 1){    //Llamar al objeto state controller
-		if (Relic1Selected.sprite == Resources.Load<Sprite> ("Sprites/Reliquia3Selected") && coolDownTime == coolDownAmount
+		//if(Player1 == 1){//Llamar al objeto state controller
+		if (Relic1Selected.sprite == Resources.Load<Sprite> ("Sprites/Reliquia1Selected") /*&& coolDownTime == coolDownAmount*/
 			&& Relic1Selected.enabled == true && Relic2Selected.enabled == true) {
 
-			Relic1Selected.sprite = Resources.Load<Sprite> ("Sprites/Reliquia3");
-			Relic2Selected.sprite = Resources.Load<Sprite> ("Sprites/Reliquia4Selected");
+			Relic1Selected.sprite = Resources.Load<Sprite> ("Sprites/Reliquia1");
+			Relic2Selected.sprite = Resources.Load<Sprite> ("Sprites/Reliquia2Selected");
 
-		} else if(Relic1Selected.sprite == Resources.Load<Sprite> ("Sprites/Reliquia3") && coolDownTime == coolDownAmount 
+		} else if(Relic1Selected.sprite == Resources.Load<Sprite> ("Sprites/Reliquia1") /*&& coolDownTime == coolDownAmount*/
 			&& Relic2Selected.enabled == true){
 
-			Relic1Selected.sprite = Resources.Load<Sprite> ("Sprites/Reliquia3Selected");
-			Relic2Selected.sprite = Resources.Load<Sprite> ("Sprites/Reliquia4");
+			Relic1Selected.sprite = Resources.Load<Sprite> ("Sprites/Reliquia1Selected");
+			Relic2Selected.sprite = Resources.Load<Sprite> ("Sprites/Reliquia2");
 
 		}
 		//}
@@ -70,5 +111,5 @@ public class RelicsCoolDownLinx : MonoBehaviour {
 		//}
 
 		//Multiplayer
-	}*/
+	}
 }

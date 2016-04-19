@@ -17,12 +17,12 @@ public class LinxControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//if pulsamos la reliquia y no está el cooldow y está activa
-		characterController.GetComponent<characterController>().character1Hp += 100;
+		/*characterController.GetComponent<characterController>().character1Hp += 100;
 		characterController.GetComponent<characterController>().character2Hp += 100;
-		characterController.GetComponent<characterController>().character3Hp += 100;
+		characterController.GetComponent<characterController>().character3Hp += 100;*/
 	}
-	void OnCollisionEnter(Collision collision){
-		string tag = collision.collider.tag;
+	void OnTriggerEnter(Collider collision){
+		string tag = collision.tag;
 		if (tag == "Arm") {
 			collision.gameObject.GetComponent<BoxCollider> ().enabled = false;
 			characterController.GetComponent<characterController> ().character1Hp -= armAttack;
@@ -30,6 +30,7 @@ public class LinxControl : MonoBehaviour {
 		}
 		if (tag == "Orb") {
 			characterController.GetComponent<characterController> ().points += orbPoints;
+			Destroy (collision.gameObject);
 		}
 		if(tag == "Arrow"){
 			characterController.GetComponent<characterController> ().character1Hp -= arrowAttack;

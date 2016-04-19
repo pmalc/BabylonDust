@@ -15,6 +15,12 @@ ModelImporter:
     100014: Hoja6
     100016: Hoja7
     100018: Hoja8
+    100020: Hoja009
+    100022: Hoja010
+    100024: Hoja011
+    100026: Hoja012
+    100028: Hoja013
+    100030: Hoja014
     400000: //RootNode
     400002: Arbusto1
     400004: Hoja1
@@ -25,6 +31,12 @@ ModelImporter:
     400014: Hoja6
     400016: Hoja7
     400018: Hoja8
+    400020: Hoja009
+    400022: Hoja010
+    400024: Hoja011
+    400026: Hoja012
+    400028: Hoja013
+    400030: Hoja014
     2300000: Arbusto1
     2300002: Hoja1
     2300004: Hoja2
@@ -34,6 +46,12 @@ ModelImporter:
     2300012: Hoja6
     2300014: Hoja7
     2300016: Hoja8
+    2300018: Hoja009
+    2300020: Hoja010
+    2300022: Hoja011
+    2300024: Hoja012
+    2300026: Hoja013
+    2300028: Hoja014
     3300000: Arbusto1
     3300002: Hoja1
     3300004: Hoja2
@@ -43,6 +61,12 @@ ModelImporter:
     3300012: Hoja6
     3300014: Hoja7
     3300016: Hoja8
+    3300018: Hoja009
+    3300020: Hoja010
+    3300022: Hoja011
+    3300024: Hoja012
+    3300026: Hoja013
+    3300028: Hoja014
     4300000: Hoja1
     4300002: Hoja2
     4300004: Hoja3
@@ -52,6 +76,12 @@ ModelImporter:
     4300012: Hoja7
     4300014: Hoja8
     4300016: Arbusto1
+    4300018: Hoja009
+    4300020: Hoja010
+    4300022: Hoja011
+    4300024: Hoja012
+    4300026: Hoja013
+    4300028: Hoja014
     9500000: //RootNode
   materials:
     importMaterials: 1
